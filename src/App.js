@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Background from './components/background';
+import Body from './components/Body';
+import NavBar from './components/NavBar';
+import Recipe from './components/Recipe';
+import Footer from './components/Footer';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (search) => {
+    setSearchTerm(search);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <NavBar />
       </header>
+      <main>
+        {/* Pass the handleSearch function to Background */}
+        <Background onSearch={handleSearch} />
+        {/* Pass the searchTerm to Recipe component */}
+        <Body />
+        <Recipe search={searchTerm} />
+      </main>
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 }

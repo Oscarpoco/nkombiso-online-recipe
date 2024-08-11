@@ -1,0 +1,39 @@
+.recipe-grid 
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Responsive grid with min width */
+    gap: 20px; /* Space between grid items */
+    /* padding: 20px; */
+  }
+  
+  .recipe-card 
+  {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .recipe-card img 
+  {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-card h2 
+  {
+    font-size: 1.5em;
+    margin: 10px 0;
+    /* font-family: 'Papyrus', fantasy; */
+  }
+  
+  .recipe-card p 
+  {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
