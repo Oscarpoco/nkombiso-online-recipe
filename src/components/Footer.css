@@ -110,10 +110,12 @@
     /* font-family: 'Papyrus', 'Luminari', fantasy, serif; */
     font-weight: bold;
     padding: .5em;
-    border: 2px solid blue;
     align-self: end;
-    color: white;
-    background-color: blue;
+    color: whitesmoke;
+    background: linear-gradient(to right, #4680f3, #141413);
     box-shadow: 0 4px 8px rgba(0, 0, 0,0.1);
     cursor: pointer;
+    border: 3px solid transparent; /* Transparent border for gradient effect */
+    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border-image-slice: 1;
 }

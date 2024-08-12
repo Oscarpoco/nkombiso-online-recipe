@@ -1,5 +1,5 @@
-.recipe-grid 
-{
+  .recipe-grid 
+  {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Responsive grid with min width */
     gap: 20px; /* Space between grid items */

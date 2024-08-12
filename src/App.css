@@ -8,6 +8,14 @@
   font-family: 'Dancing Script', cursive;
 }
 
+
+/* ALL PLACEHOLDERS */
+::placeholder
+{
+  color: blue;
+  font-size: 1.2em;
+}
+
 /* APP WRAPPER */
 .App
 {
