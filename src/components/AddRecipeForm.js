@@ -5,7 +5,7 @@ function AddRecipeForm({closeForm, showRecipeForm}){
     return(
        <div className="user-profile">
         {showRecipeForm && (
-             <div className="popup">
+             <div className="popup" style={{padding: '1em'}}>
              <h2>You're about to share something delicious! <br></br> <span>Please fill in the details</span></h2>
 
              <label>Recipe Name</label>

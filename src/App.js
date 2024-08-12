@@ -52,6 +52,7 @@ function App() {
   const [showSignIn, setShowSignIn] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [showRecipeForm, setShowRecipeForm] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
 
   // SEARCH FUNCTION
   const handleSearch = (search) => {
@@ -88,6 +89,12 @@ function App() {
   }
   // ENDS
 
+  // SIGNING IN FUNCTION
+
+  const handleSignIn = ()=> {
+    setIsSignedIn(true)
+  }
+  // ENDS
 
 
   return (
@@ -97,7 +104,8 @@ function App() {
       <header>
         <NavBar 
           onSignInClick={handleSignInClick} 
-          onRegisterClick={handleRegisterClick} 
+          onRegisterClick={handleRegisterClick}
+          onSignIn = {isSignedIn} 
         />
       </header>
       {/* ENDS */}
@@ -108,7 +116,11 @@ function App() {
         <Background onSearch={handleSearch} />
         {/* Pass the searchTerm to Recipe component */}
         <Body />
-        <MyRecipe />
+        {isSignedIn && (
+          <MyRecipe />
+
+        )}
+        
         <Recipe search={searchTerm} />
       </main>
       {/* ENDS */}
@@ -130,13 +142,16 @@ function App() {
       />
 
       {/* display floating button */}
-      <FloatingButton 
+
+      {isSignedIn && (
+        <FloatingButton 
         handleClickForm={handleClickForm}
-      
       />
 
+      )}
+      
       {/* Display AddRecipeForm */}
-
+      
       <AddRecipeForm 
         closeForm={handleCloseForm}
         showRecipeForm = {showRecipeForm}
