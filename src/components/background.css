@@ -9,25 +9,30 @@
     justify-content: start;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
     /* background-color: blue; */
 }
 
 .left
 {
     width: 60%;
-    font-weight: bold;
-    font-family: 'Papyrus' ,fantasy;
+    /* font-weight: bold; */
+    /* font-family: 'Papyrus' ,fantasy; */
+    font-family: 'IM Fell English SC', fantasy;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.8em;
 }
 
 .left input
 {
     text-align: center;
     padding: 1em 4em;
-    border: 2px solid blue;
+    border: 6px solid transparent; /* Transparent border for gradient effect */
+    border-image: linear-gradient(to right, #d3d0d0, #141413); /* Gradient border color */
+    border-image-slice: 1;
     align-self: start;
     outline: none;
     background: linear-gradient(to bottom, #fff 0%, #fff 50%, #eeeded 100%);background-color: #eeeded;
@@ -35,7 +40,9 @@
 
 .left input:focus
 {
-    border: 2px solid black;
+    border: 6px solid transparent; /* Transparent border for gradient effect */
+    border-image: linear-gradient(to right, #141413,#d3d0d0); /* Gradient border color */
+    border-image-slice: 1;
     transition: all .7s ease-in-out;
 }
 
@@ -49,6 +56,7 @@
     padding: 0 1.3em;
     position: absolute;
     right: 13%;
+    box-sizing: border-box;
     /* top: 0; */
     /* bottom: 10; */
     /* background-color: yellow; */
