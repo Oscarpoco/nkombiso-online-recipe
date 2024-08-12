@@ -20,6 +20,9 @@
     text-align: start;
     border: none;
     color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .category
