@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": "5bb6",
+      "userId": 1723551702729,
+      "username": "kyle@gmail.com",
+      "password": "Kylechauke@1612",
+      "name": "Kyle Oscar",
+      "lastName": "Chauke",
+      "favorite": "burger"
+    },
+    {
+      "id": "2e5b",
+      "userId": 1723555729720,
+      "username": "okpoco15@gmail.com",
+      "password": "Oscarpoco1612",
+      "name": "Oscar",
+      "lastName": "Poco",
+      "favorite": "Chicken"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "6a49",
+      "recipeName": "Masonja",
+      "ingredients": "Masonja",
+      "instructions": "Masonja",
+      "category": "Masonja",
+      "prepTime": "Masonja",
+      "cookTime": "Masonja",
+      "servings": "Masonja",
+      "userId": null
+    },
+    {
+      "id": "6a49",
+      "recipeName": "Masonja",
+      "ingredients": "Masonja",
+      "instructions": "Masonja",
+      "category": "Masonja",
+      "prepTime": "Masonja",
+      "cookTime": "Masonja",
+      "servings": "Masonja",
+      "userId": null
+    },
+    {
+      "id": "efc8",
+      "recipeName": "oscar",
+      "ingredients": "oscar",
+      "instructions": "oscar",
+      "category": "oscar",
+      "prepTime": "oscar",
+      "cookTime": "oscar",
+      "servings": "oscar",
+      "userId": null
+    },
+    {
+      "id": "2d7e",
+      "recipeName": "Masonja",
+      "ingredients": "Masonja",
+      "instructions": "Masonja",
+      "category": "Masonja",
+      "prepTime": "Masonja",
+      "cookTime": "Masonja",
+      "servings": "Masonja",
+      "userId": null
+    },
+    {
+      "id": "2d7e",
+      "recipeName": "Masonja",
+      "ingredients": "Masonja",
+      "instructions": "Masonja",
+      "category": "Masonja",
+      "prepTime": "Masonja",
+      "cookTime": "Masonja",
+      "servings": "Masonja",
+      "userId": null
+    },
+    {
+      "id": "323e",
+      "recipeName": "oscar",
+      "ingredients": "oscar",
+      "instructions": "oscar",
+      "category": "oscar",
+      "prepTime": "oscar",
+      "cookTime": "oscar",
+      "servings": "oscar",
+      "userId": null
+    }
+  ]
+}

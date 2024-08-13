@@ -6,7 +6,7 @@ import { SiCodechef } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 
 
-function NavBar( { onSignInClick, onRegisterClick, onSignIn } ){
+function NavBar( { onSignInClick, onRegisterClick, onSignIn, onProfileShow, onSignOut } ){
 
     return(
 
@@ -26,7 +26,8 @@ function NavBar( { onSignInClick, onRegisterClick, onSignIn } ){
             </div>
 
             ):  <div className="prifile">
-                    <button type="submit"   style={{border: 'none', fontSize: '1.1em', fontWeight: 'bold', color: 'black', display: 'flex',justifyContent: 'end', alignItems: 'center'}}>Profile <CgProfile  className="user" style={{fontSize: '1.5em'}}/></button>
+                    <button type="submit"  onClick={onProfileShow} style={{border: 'none', fontSize: '1.1em', fontWeight: 'bold', color: 'black', display: 'flex',justifyContent: 'end', alignItems: 'center'}}>Profile <CgProfile  className="user" style={{fontSize: '1.5em'}}/></button>
+                    <button type="submit"  onClick={onSignOut} style={{border: 'none', fontSize: '1.1em', fontWeight: 'bold', color: 'black', display: 'flex',justifyContent: 'end', alignItems: 'center'}}>Logout</button>
                 </div>
             }
 
