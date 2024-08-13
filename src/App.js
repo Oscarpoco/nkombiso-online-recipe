@@ -37,7 +37,7 @@
 
 import './App.css';
 import { useState } from 'react';
-import Background from './components/Background';
+import Background from './components/background';
 import Body from './components/Body';
 import NavBar from './components/NavBar';
 import Recipe from './components/Recipe';

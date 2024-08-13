@@ -21,12 +21,12 @@ function NavBar( { onSignInClick, onRegisterClick, onSignIn } ){
             {!onSignIn ? (
                 
             <div className="signIn">
-                <button type="submit" onClick={onSignInClick}  style={{border: 'none', fontSize: '1.2em', fontWeight: 'bold', color: 'black', justifyContent: 'end'}}>SignIn <FaSignInAlt /></button>
+                <button type="submit" onClick={onSignInClick}  style={{border: 'none', cursor: 'pointer', fontSize: '1.1em', fontWeight: 'bold', color: 'black', justifyContent: 'start'}}>SignIn <FaSignInAlt /></button>
                 <button type="submit" onClick={onRegisterClick}>Register <IoIosPersonAdd className="user-icon"/></button>
             </div>
 
-            ):  <div className="signIn">
-                    <button type="submit"   style={{border: 'none', fontSize: '1.4em', fontWeight: 'bold', color: 'black', display: 'flex',justifyContent: 'end', alignItems: 'center'}}>Profile <CgProfile  className="user" style={{fontSize: '1.5em'}}/></button>
+            ):  <div className="prifile">
+                    <button type="submit"   style={{border: 'none', fontSize: '1.1em', fontWeight: 'bold', color: 'black', display: 'flex',justifyContent: 'end', alignItems: 'center'}}>Profile <CgProfile  className="user" style={{fontSize: '1.5em'}}/></button>
                 </div>
             }
 

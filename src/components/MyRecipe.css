@@ -52,8 +52,8 @@
 .my-button button
 {
     background: linear-gradient(to bottom, #fff 0%, #fff 50%, #eeeded 100%);
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
     border: none;
     border-radius: 50%;
     align-self: end;
@@ -68,7 +68,7 @@
 .my-button span
 {
    color: red;
-   font-size: 5em;
+   font-size: 4em;
    font-weight: bold;
 }
 
@@ -84,8 +84,8 @@
 {
     /* font-family:'Papyrus', fantasy; */
     padding: .5em 1em;
-    border: 6px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #d3d0d0, #141413); /* Gradient border color */
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #d3d0d0, #141413);
     border-image-slice: 1;
     /* width: 20%; */
     /* text-align: center; */

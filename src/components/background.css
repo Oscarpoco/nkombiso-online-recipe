@@ -23,15 +23,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.8em;
+    /* font-size: 1.8em; */
 }
 
 .left input
 {
     text-align: center;
-    padding: 1em 4em;
-    border: 6px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #d3d0d0, #141413); /* Gradient border color */
+    padding: .6em 2em;
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #d3d0d0, #141413); 
     border-image-slice: 1;
     align-self: start;
     outline: none;

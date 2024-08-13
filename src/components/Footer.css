@@ -12,7 +12,7 @@
 {
     /* font-family: 'Papyrus', 'Luminari', fantasy, serif; */
     padding: .5em 1em;
-    border: 5px solid transparent; /* Transparent border for gradient effect */
+    border: 3px solid transparent; /* Transparent border for gradient effect */
     border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
     border-image-slice: 1;
     font-size: 1em;
@@ -51,7 +51,7 @@
 
 .contact
 {
-    border: 4px solid transparent; /* Transparent border for gradient effect */
+    border: 3px solid transparent; /* Transparent border for gradient effect */
     border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
     border-image-slice: 1;
     width: 100%;
