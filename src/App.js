@@ -193,7 +193,20 @@ function App() {
   const [userId, setUserId] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+  // HANDLE HUMBURGER
+
+  const toggleMenu = () => {
+    setIsMenuOpen(true)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
 
   // Check sign-in status on app load
   useEffect(() => {
@@ -371,6 +384,9 @@ const handleSignOut = () => {
           onBreakfast={handleBreakFast}
           onLunch={handleLunch}
           onDinner={handleDinner}
+          openMenu = {toggleMenu}
+          closeMenu = {closeMenu}
+          isMenuOpen = {isMenuOpen}
         />
       </header>
 

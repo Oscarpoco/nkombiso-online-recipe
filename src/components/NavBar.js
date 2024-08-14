@@ -52,18 +52,12 @@ import { SiCodechef } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu } from "react-icons/fi"; // Hamburger icon
 
-function NavBar({ onSignInClick, onRegisterClick, onSignIn, onProfileShow, onSignOut, onBreakfast, onLunch, onDinner }) {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+function NavBar({ onSignInClick, openMenu, closeMenu, isMenuOpen,onRegisterClick, onSignIn, onProfileShow, onSignOut, onBreakfast, onLunch, onDinner }) {
 
     return (
         <div className="NavBar">
             <div className="logo">
                 Nkombiso <SiCodechef className="logo-icon" />
-            </div>
-            <div className="menu-toggle" onClick={toggleMenu}>
-                <FiMenu className="menu-icon" />
             </div>
             <div className={`menu-items ${isMenuOpen ? 'open' : ''}`}>
                 <div className="category">
@@ -83,6 +77,9 @@ function NavBar({ onSignInClick, onRegisterClick, onSignIn, onProfileShow, onSig
                         <button type="submit" onClick={onSignOut} style={{ border: 'none', fontSize: '1.1em', fontWeight: 'bold', color: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Logout</button>
                     </div>
                 )}
+            </div>
+            <div className="menu-toggle" onClick={openMenu}>
+                <FiMenu className="menu-icon" />
             </div>
         </div>
     );
