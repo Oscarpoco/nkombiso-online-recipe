@@ -200,7 +200,7 @@ function App() {
   // HANDLE HUMBURGER
 
   const toggleMenu = () => {
-    setIsMenuOpen(true)
+    setIsMenuOpen(!isMenuOpen)
   }
 
   const closeMenu = () => {

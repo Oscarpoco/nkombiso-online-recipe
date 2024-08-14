@@ -48,8 +48,8 @@
 .popup h2 span
 {
    color: white;
-   /* font-size: 1.3em; */
-   font-family: 'IM Fell English SC', fantasy;
+   font-size: 1.3em;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -97,9 +97,10 @@
 .popup p
 {
     text-decoration: underline;
-    color: blue;
+    color: black;
     cursor: pointer;
     /* font-size: 1em; */
+    align-self: start;
 }
 
 label
@@ -180,4 +181,42 @@ label
     border: solid white;
     border-width: 0 0 2px 2px;
     transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 740px) 
+{
+
+    .popup
+    {
+        width: 90%;
+        top: 60%;
+        padding: 5px 1em;
+    }
+
+    .popup button 
+    {
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, #141413,  #d3d0d0);
+    border-image-slice: 1;
+    padding: .35em 1.3em;
+    width: 100%;
+    /* font-size: 1em; */
+    font-weight: bold;
+    font-family: 'IM Fell English SC', fantasy;
+    }
+
+    .popup p
+    {
+    font-size: .8em;
+    }
+
+    label
+    {
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-self: start;
+    font-size: .8em;
+    }
+
 }

@@ -54,7 +54,7 @@
 .contact
 {
     border: 3px solid transparent; 
-    border-image: linear-gradient(to right, #4680f3, #141413); 
+    border-image: linear-gradient(to right, #0a9fefeb, #edecec); 
     border-image-slice: 1;
     width: 100%;
     display: flex;
@@ -62,7 +62,7 @@
     align-items: center;
     padding: 0 1em;
     box-sizing: border-box;
-    background: #eeeded;
+    background: linear-gradient(to right, #0a9fefeb, #edecec);;
 }
 
 .social-icons
