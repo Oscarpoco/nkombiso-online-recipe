@@ -4,16 +4,18 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    gap: 2em;
+    gap: 1.5em;
     box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
 }
 
 .footer h3
 {
     /* font-family: 'Papyrus', 'Luminari', fantasy, serif; */
     padding: .4em .6em;
-    border: 3px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413);
     border-image-slice: 1;
     font-size: .9em;
     /* width: 20%; */
@@ -32,8 +34,8 @@
 
 .chef .item
 {
-    border: 4px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border: 4px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413); 
     border-image-slice: 1;
     width: 100%;
     box-sizing: border-box;
@@ -51,8 +53,8 @@
 
 .contact
 {
-    border: 3px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413); 
     border-image-slice: 1;
     width: 100%;
     display: flex;
@@ -70,7 +72,7 @@
     align-items: center;
     gap: .3em;
     font-size: 2em;
-    color: blue;
+    color: grey;
     padding: 2em;
     cursor: pointer;
 }
@@ -100,8 +102,8 @@
 
     padding: .7em 2.5em;
     outline: none;
-    border: 3px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413);
     border-image-slice: 1;
 }
 
@@ -115,7 +117,103 @@
     background: linear-gradient(to right, #4680f3, #141413);
     box-shadow: 0 4px 8px rgba(0, 0, 0,0.1);
     cursor: pointer;
-    border: 3px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #4680f3, #141413); /* Gradient border color */
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413);
     border-image-slice: 1;
+}
+
+
+@media only screen and (max-width:740px)
+{
+    .footer
+    {
+    gap: .5em;
+    width: 100%;
+    padding: 1em;
+    }
+
+
+
+    .footer h3
+    {
+    padding: .4em .6em;
+    font-size: .6em;
+    text-align: center;
+    }
+
+    .chef
+    {
+    gap: 1em;
+    width: 100%;
+    }
+
+    .chef .item
+    {
+        width: 50%;
+        border: 2px solid transparent;
+        border-image: linear-gradient(to right, #4680f3, #141413); 
+        border-image-slice: 1;
+    }
+
+    .chef .item img
+    {
+     width: 100%;
+    }
+
+    .chef .item p
+    {
+       font-size: .5em;
+    }
+
+
+    .contact
+    {
+    border: 2px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413); 
+    border-image-slice: 1;
+    flex-direction: column;
+    padding: 1em;
+    }
+
+    .social-icons
+    {
+    gap: .4em;
+    font-size: 1.1em;
+    color: grey;
+    padding: 1em;
+    }
+
+    .subscribe
+    {
+    width: 100%;
+    flex-direction: row;
+    }
+
+    .subscribe p
+    {
+    display: none;
+    }
+
+    .subscribe input
+    {
+    padding: .5em 2em;
+    outline: none;
+    border: 1px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413);
+    border-image-slice: 1;
+    }
+
+    .subscribe button
+    {
+    padding: .5em;
+    align-self: end;
+    color: whitesmoke;
+    background: linear-gradient(to right, #4680f3, #141413);
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0.1);
+    cursor: pointer;
+    border: 1px solid transparent; 
+    border-image: linear-gradient(to right, #4680f3, #141413);
+    border-image-slice: 1;
+    }
+
 }

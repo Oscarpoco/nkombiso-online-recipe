@@ -1,57 +1,46 @@
 {
   "users": [
     {
-      "id": "33d9",
-      "userId": 1723580040019,
-      "username": "okpoco15@gmail.com",
-      "password": "Oscarpoco1612",
-      "name": "oscar",
-      "lastName": "poco",
-      "favorite": "chicken"
+      "id": "5bb6",
+      "userId": 1723551702729,
+      "username": "kyle@gmail.com",
+      "password": "Kylechauke@1612",
+      "name": "Kyle Oscar",
+      "lastName": "Chauke",
+      "favorite": "burger"
     },
     {
-      "id": "4166",
-      "userId": 1723580249970,
-      "username": "oscar@gmail.com",
-      "password": "Oscar@poco12@chauke",
-      "name": "kyle",
-      "lastName": "chauke",
-      "favorite": "pop"
+      "id": "2e5b",
+      "userId": 1723555729720,
+      "username": "okpoco15@gmail.com",
+      "password": "Oscarpoco1612",
+      "name": "Oscar",
+      "lastName": "Poco",
+      "favorite": "Chicken"
     }
   ],
   "recipes": [
     {
-      "id": "4c03",
-      "recipeName": "Masonja",
-      "ingredients": "Tomatoes ,  Unions, Cooking oil",
-      "instructions": "Take your masonja and put them in water for 5 minutes , after start cleaning them. Fry your union and then put masonja in the pot alongside union and let them get fried , and put tomatoe  and now put some water, and let it boil for 10-15 minutes",
-      "category": "Dinner",
-      "prepTime": "10 minutes",
-      "cookTime": "30 minutes",
-      "servings": "Family",
-      "userId": "1723580249970"
+      "id": "36eb",
+      "recipeName": "Meal",
+      "ingredients": "Meal",
+      "instructions": "Meal",
+      "category": "Meal",
+      "prepTime": "Meal",
+      "cookTime": "Meal",
+      "servings": "Meal",
+      "userId": "1723555729720"
     },
     {
-      "id": "9583",
-      "recipeName": "fish",
-      "ingredients": "oil",
-      "instructions": "wee",
-      "category": "Breakfast",
-      "prepTime": "5",
-      "cookTime": "5",
-      "servings": "5",
-      "userId": "1723580249970"
-    },
-    {
-      "id": "aaac",
-      "recipeName": "w",
-      "ingredients": "w",
-      "instructions": "w",
-      "category": "w",
-      "prepTime": "w",
-      "cookTime": "w",
-      "servings": "w",
-      "userId": "1723580249970"
+      "id": "9ee8",
+      "recipeName": "Banana",
+      "ingredients": "Banana",
+      "instructions": "Banana",
+      "category": "Banana",
+      "prepTime": "Banana",
+      "cookTime": "Banana",
+      "servings": "Banana",
+      "userId": "1723555729720"
     }
   ]
 }

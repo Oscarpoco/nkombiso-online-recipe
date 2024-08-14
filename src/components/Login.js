@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import './Login.css';
+import Loader from "./Loader";
 import axios from "axios";
 
-function Login({ showSignIn, showRegister, onClose, onRegisterClick, onCloseProfile, onProfileShow, setIsSignedIn, setShowRegister, setShowSignIn }) {
+function Login({ showSignIn, showRegister, setLoading, loading,onClose, onRegisterClick, onCloseProfile, onProfileShow, setIsSignedIn, setShowRegister, setShowSignIn }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -11,6 +12,36 @@ function Login({ showSignIn, showRegister, onClose, onRegisterClick, onCloseProf
     const [favorite, setFavorite] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [isPrivacyAgreed, setIsPrivacyAgreed] = useState(false);
+    const [hasDownloadedPdf, setHasDownloadedPdf] = useState(false);
+  
+
+    // HANDLES PRIVACY
+    const handlePrivacyCheckboxChange = (event) => {
+      if (event.target.checked && !hasDownloadedPdf) {
+        // Trigger PDF download
+        downloadPdf();
+      }
+      setIsPrivacyAgreed(event.target.checked);
+    };
+  
+    const handleDeclineCheckboxChange = (event) => {
+      setIsPrivacyAgreed(!event.target.checked);
+    };
+  
+    const downloadPdf = () => {
+      // Set the URL to the location of your PDF in the public folder
+      const pdfUrl = `${process.env.PUBLIC_URL}/privacy-terms.pdf`;
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'privacy-terms.pdf';
+      link.click();
+  
+      // Mark PDF as downloaded
+      setHasDownloadedPdf(true);
+    };
+    // ENDS
+
 
     // HANDLE SIGN UP
     const isStrongPassword = (password) => {
@@ -91,42 +122,55 @@ function Login({ showSignIn, showRegister, onClose, onRegisterClick, onCloseProf
     };
     // SIGN UP ENDS 
 
-    // HANDLES SIGN IN
+// HANDLES SIGN IN
 
-    const validate = () => {
-        if (username === '' || password === '') {
-            setErrorMessage("Please fill in all fields");
-            return false;
-        }
-        return true;
+const validate = () => {
+    if (username === '' || password === '') {
+        setErrorMessage("Please fill in all fields");
+        return false;
     }
+    return true;
+}
 
-    const proceedLogin = async (e) => {
-        e.preventDefault();
+const proceedLogin = async (e) => {
+    e.preventDefault();
 
-        if (validate()) {
-            try {
-                const response = await axios.get('http://localhost:3003/users');
-                const users = response.data;
+    if (validate()) {
 
-                const user = users.find(user => user.username === username && user.password === password);
-                if (user) {
-                    setIsSignedIn(true);
-                    setShowSignIn(false);
+        try {
+            const response = await axios.get('http://localhost:3003/users');
+            const users = response.data;
 
-                    // Store userId in local storage
-                    localStorage.setItem('userId', user.userId);
+            const user = users.find(user => user.username === username && user.password === password);
+            if (user) {
+                setLoading(true); // Start showing the loader
+                setIsSignedIn(true);
+                setShowSignIn(false);
 
-                    // Redirect or update the state as needed
-                } else {
-                    setErrorMessage("Invalid credentials");
-                }
-                
-            } catch (err) {
-                setErrorMessage("An error occurred: " + err.message);
+                // Store userId in local storage
+                localStorage.setItem('userId', user.userId);
+                setTimeout(() => {
+                    setLoading(false); // Stop showing the loader after 3 seconds if login is successful
+                }, 3000);
+
+                // Redirect or update the state as needed
+            } else {
+                setErrorMessage("Invalid credentials");
+                return;
             }
+
+        } catch (err) {
+            setErrorMessage("An error occurred: " + err.message);
+            return;
         }
+
     }
+}
+
+if (loading) {
+    return <Loader />; // Show the loader while data is being fetched
+}
+
 
     return (
         <div className={`user-profile ${showSignIn || showRegister ? 'show' : ''}`}>
@@ -227,6 +271,26 @@ function Login({ showSignIn, showRegister, onClose, onRegisterClick, onCloseProf
                         onChange={e => setConfirmPassword(e.target.value)}
                     ></input>
 
+                    <div className="checkbox-wrapper">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            className="custom-checkbox"
+                            checked={isPrivacyAgreed}
+                            onChange={handlePrivacyCheckboxChange}
+                        />
+                        <label htmlFor="privacy">I agree to the terms and conditions</label>
+
+                        <input
+                            type="checkbox"
+                            id="decline"
+                            className="custom-checkbox"
+                            checked={!isPrivacyAgreed}
+                            onChange={handleDeclineCheckboxChange}
+                        />
+                        <label htmlFor="decline">I decline</label>
+                    </div>
+                    
                     {/* buttons */}
                     <div className="button">
                         <button type="submit">Submit</button>
@@ -270,12 +334,6 @@ function Login({ showSignIn, showRegister, onClose, onRegisterClick, onCloseProf
                     ></input>
 
                     <label>Password</label>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                    ></input>
-
-                    <label>Confirm Password</label>
                     <input
                         type="password"
                         placeholder="Password"

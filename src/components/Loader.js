@@ -1,14 +1,12 @@
 import React from 'react';
 import './Loader.css';
+import { SiCodechef } from "react-icons/si";
 
 const Loader = () => {
     return (
-        <div className="loader-container">
-            <div className="loader">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-            </div>
+        <div className='box' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%', flexDirection: 'column', gap: '.6em', background: 'rgba(0, 0, 0, .1)'}}>
+            <div class="loader"></div>
+            <div className="logo">Nkombiso <SiCodechef className="logo-icon" /></div>
         </div>
     );
 };

@@ -14,7 +14,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: linear-gradient(to right, #0a9fefeb,  #edecec);
-    padding: 5px 20px;
+    padding: 5px 5em;
     width: 50%;
     /* height: 100vh; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@
 
 .popup input 
 {
-    width: 80%;
+    width: 100%;
     border: 2px solid black;
     padding: .5em;
     border: 2px solid transparent; 
@@ -63,6 +63,7 @@
     border-image-slice: 1;
     outline: none;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .popup input:focus 
@@ -107,7 +108,9 @@ label
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     align-self: start;
-    padding-left: 4em;
+    /* padding-left: 5em; */
+    /* width: 80%; */
+    
 }
 
 
@@ -115,4 +118,66 @@ label
 .show 
 {
     display: block;
+}
+
+
+/* CHECKBOX */
+
+/* Hide default checkbox */
+.custom-checkbox 
+{
+    display: none;
+}
+
+
+.checkbox-wrapper 
+{
+    display: flex;
+    flex-direction: column; 
+    cursor: pointer;
+    width: 100%;
+    gap: .7em;
+}
+
+.checkbox-wrapper label 
+{
+    position: relative;
+    padding-left: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: lighter;
+}
+
+.checkbox-wrapper label::before 
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-checkbox:checked + label::before 
+{
+    background-color: #007bff; 
+    border-color: #007bff;
+}
+
+.custom-checkbox:checked + label::after 
+{
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    width: 8px;
+    height: 4px;
+    border: solid white;
+    border-width: 0 0 2px 2px;
+    transform: rotate(-45deg);
 }

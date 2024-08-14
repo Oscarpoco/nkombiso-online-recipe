@@ -34,6 +34,7 @@
   justify-content: start;
   align-items: center;
   box-sizing: border-box;
+  /* padding: 1em; */
   /* gap: 0.3em; */
   width: 100%;
   height: auto;
@@ -62,7 +63,7 @@ main
   justify-content: start;
   width: 100%;
   height: auto;
-  /* padding: 0.4em; */
+  padding: 0.4em;
   align-items: center;
   box-sizing: border-box;
 }
@@ -78,7 +79,7 @@ footer
   justify-content: start;
   width: 100%;
   height: auto;
-  padding: 0.4em;
+  padding: 0.4em 0;
   align-items: center;
   box-sizing: border-box;
 }

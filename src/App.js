@@ -211,14 +211,18 @@ function App() {
       } catch (err) {
         console.error("Failed to fetch recipes", err);
       } finally {
-        setLoading(false); // Stop loading after fetching data
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
       }
     };
 
     if (savedUserId) {
       fetchRecipes(savedUserId);
     } else {
-      setLoading(false); // Stop loading if no user is signed in
+      setTimeout(() => {
+        setLoading(false); 
+      }, 3000);
     }
   }, []);
 
@@ -264,18 +268,27 @@ function App() {
   };
 
   // SIGNING IN FUNCTION
-  const handleSignIn = (userId) => {
+  const handleSignIn = async (userId) => {
+    setLoading(true); // Start showing the loader
     localStorage.setItem('userId', userId);
     setUserId(userId);
     setIsSignedIn(true);
+    setTimeout(() => {
+      setLoading(false); 
+    }, 3000);
   };
 
-  // SIGNING OUT FUNCTION
-  const handleSignOut = () => {
-    localStorage.removeItem('userId');
-    setUserId(null);
-    setIsSignedIn(false);
-  };
+ // SIGNING OUT FUNCTION
+const handleSignOut = () => {
+  setLoading(true); // Start showing the loader
+  localStorage.removeItem('userId');
+  setUserId(null);
+  setIsSignedIn(false);
+  setTimeout(() => {
+    setLoading(false); 
+  }, 3000);
+};
+
 
   // Handle adding a new recipe
   const addRecipe = (recipe) => {
@@ -394,6 +407,8 @@ function App() {
         setShowSignIn={setShowSignIn}
         userId={userId}
         onSignIn={handleSignIn}
+        setLoading = {setLoading}
+        loading = {loading}
       />
 
       {/* DISPLAY FLOATING BUTTON */}

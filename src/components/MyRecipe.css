@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: .2em;
+    gap: 1em;
 }
 
 .my-space
@@ -39,7 +39,7 @@
     overflow: auto;
     padding: 2em;
     text-align: center;
-    height: 50%;
+    /* height: 100%; */
     overflow-y: auto;
 }
 
@@ -114,6 +114,7 @@
 .my-recipe .title
 {
     text-align: center;
+    height: 30%;
 }
 
 .my-recipe .title h3
