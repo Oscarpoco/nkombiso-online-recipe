@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import './Login';
 
-function AddRecipeForm({ closeForm, showRecipeForm, addRecipe, userId }) {
-    const [recipeName, setRecipeName] = useState("");
-    const [ingredients, setIngredients] = useState("");
-    const [instructions, setInstructions] = useState("");
-    const [category, setCategory] = useState("");
-    const [prepTime, setPrepTime] = useState("");
-    const [cookTime, setCookTime] = useState("");
-    const [servings, setServings] = useState("");
-    // const [picture, setPicture] = useState(null);
+function AddRecipeForm({ closeForm, showRecipeForm, setRecipes, userId, recipe, editMode }) {
+    const [recipeName, setRecipeName] = useState(recipe ? recipe.recipeName : "");
+    const [ingredients, setIngredients] = useState(recipe ? recipe.ingredients : "");
+    const [instructions, setInstructions] = useState(recipe ? recipe.instructions : "");
+    const [category, setCategory] = useState(recipe ? recipe.category : "");
+    const [prepTime, setPrepTime] = useState(recipe ? recipe.prepTime : "");
+    const [cookTime, setCookTime] = useState(recipe ? recipe.cookTime : "");
+    const [servings, setServings] = useState(recipe ? recipe.servings : "");
     const [errorMessage, setErrorMessage] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false); // Add this state
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,11 +19,7 @@ function AddRecipeForm({ closeForm, showRecipeForm, addRecipe, userId }) {
             return;
         }
 
-        if (isSubmitting) return; // Prevent multiple submissions
-
-        setIsSubmitting(true); // Disable submit button to prevent double submission
-
-        const userDetails = {
+        const recipeDetails = {
             recipeName,
             ingredients,
             instructions,
@@ -33,33 +27,45 @@ function AddRecipeForm({ closeForm, showRecipeForm, addRecipe, userId }) {
             prepTime,
             cookTime,
             servings,
-            userId
+            userId 
         };
 
         try {
-            const response = await fetch('http://localhost:3003/recipes', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userDetails),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                setErrorMessage(`Failed to add recipe: ${errorData.message || 'Unknown error'}`);
-                return;
+            if (editMode) {
+                // Update existing recipe
+                const response = await fetch(`http://localhost:3003/recipes/${recipe.id}`, {
+                    method: "PATCH",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(recipeDetails),
+                });
+                
+                if (!response.ok) throw new Error('Failed to update recipe');
+        
+                const updatedRecipe = await response.json();
+        
+                // Update the recipe in the list
+                setRecipes(prevRecipes => prevRecipes.map(r => r.id === updatedRecipe.id ? updatedRecipe : r));
+            } else {
+                // Add new recipe
+                const response = await fetch('http://localhost:3003/recipes', {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(recipeDetails),
+                });
+                
+                if (!response.ok) throw new Error('Failed to add recipe');
+        
+                const newRecipe = await response.json();
+        
+                // Add the new recipe to the list
+                setRecipes(prevRecipes => [...prevRecipes, newRecipe]);
             }
-
-            const data = await response.json();
-            addRecipe(data); // Add recipe to the list
-            closeForm(); // Close the form
+        
+            closeForm(); // Close the form after submission
         } catch (err) {
-            setErrorMessage("An error occurred: " + err.message);
-        } finally {
-            setIsSubmitting(false); // Re-enable the submit button
+            setErrorMessage(`An error occurred: ${err.message}`);
         }
-    };
+    }
 
     return (
         <div className="user-profile">
@@ -123,17 +129,8 @@ function AddRecipeForm({ closeForm, showRecipeForm, addRecipe, userId }) {
                         onChange={e => setServings(e.target.value)}
                     />
 
-                    {/* <label>Upload a picture</label>
-                    <input
-                        type="file"
-                        id="file-upload"
-                        name="picture"
-                        accept="image/*"
-                        onChange={e => setPicture(e.target.files[0])}
-                    /> */}
-
                     <div className="button">
-                        <button type="submit" disabled={isSubmitting}>Submit</button>
+                        <button type="submit">Submit</button>
                         <button type="button" onClick={closeForm}>Close</button>
                     </div>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}

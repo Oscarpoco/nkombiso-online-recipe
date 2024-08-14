@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.8em;
+    /* font-size: 1.8em; */
 }
 
 .left input
@@ -40,7 +40,7 @@
 
 .left input:focus
 {
-    border: 6px solid transparent; /* Transparent border for gradient effect */
+    border: 3px solid transparent; /* Transparent border for gradient effect */
     border-image: linear-gradient(to right, #141413,#d3d0d0); /* Gradient border color */
     border-image-slice: 1;
     transition: all .7s ease-in-out;

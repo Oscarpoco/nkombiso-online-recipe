@@ -9,7 +9,7 @@
     align-items: center;
     background: linear-gradient(to bottom, #fff 0%, #fff 50%, #eeeded 100%);
     padding: 0 1em;
-    border-bottom: 6px solid transparent; /* Transparent border for gradient effect */
+    border-bottom: 5px solid transparent; /* Transparent border for gradient effect */
     border-image: linear-gradient(to right, #d3d0d0, #141413); /* Gradient border color */
     border-image-slice: 1;
     width: 100%;
@@ -45,6 +45,9 @@
     align-items: center;
     /* padding: 1em 3em; */
     gap: .5em;
+    margin-right: 3em;
+    /* background-color: blue; */
+    z-index: 1;
 }
 
 .item
@@ -56,22 +59,24 @@
     font-size: 1.3em;
 }
 
-.item:hover
-{
-    border-bottom: 6px solid transparent; /* Transparent border for gradient effect */
-    border-image: linear-gradient(to right, #141413,#d3d0d0); /* Gradient border color */
-    border-image-slice: 1;
-    transition: all .5s ease-in-out;
-}
-
 .signIn
 {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
-    align-items: start;
+    align-items: center;
     gap: .7em;
-    align-items: start;
+    z-index: 1;
+}
+
+.profile
+{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: .2em;
+    z-index: 1;
 }
 
 .NavBar button
@@ -96,7 +101,7 @@
 {
     font-size: 1.3em;
     color: black;
-    border-bottom: 6px solid transparent; /* Transparent border for gradient effect */
+    border-bottom: 4px solid transparent; /* Transparent border for gradient effect */
     border-image: linear-gradient(to right, #d3d0d0, #141413); /* Gradient border color */
     border-image-slice: 1;
     border-radius: 50%;

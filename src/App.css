@@ -16,6 +16,16 @@
   font-size: 1.2em;
 }
 
+/* SCROLLBAR FOR ALL */
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
+  height: 0; /* Hide horizontal scrollbar */
+}
+
+/* ENDS */
+
 /* APP WRAPPER */
 .App
 {

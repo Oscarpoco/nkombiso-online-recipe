@@ -1,90 +1,57 @@
 {
   "users": [
     {
-      "id": "5bb6",
-      "userId": 1723551702729,
-      "username": "kyle@gmail.com",
-      "password": "Kylechauke@1612",
-      "name": "Kyle Oscar",
-      "lastName": "Chauke",
-      "favorite": "burger"
-    },
-    {
-      "id": "2e5b",
-      "userId": 1723555729720,
+      "id": "33d9",
+      "userId": 1723580040019,
       "username": "okpoco15@gmail.com",
       "password": "Oscarpoco1612",
-      "name": "Oscar",
-      "lastName": "Poco",
-      "favorite": "Chicken"
+      "name": "oscar",
+      "lastName": "poco",
+      "favorite": "chicken"
+    },
+    {
+      "id": "4166",
+      "userId": 1723580249970,
+      "username": "oscar@gmail.com",
+      "password": "Oscar@poco12@chauke",
+      "name": "kyle",
+      "lastName": "chauke",
+      "favorite": "pop"
     }
   ],
   "recipes": [
     {
-      "id": "6a49",
+      "id": "4c03",
       "recipeName": "Masonja",
-      "ingredients": "Masonja",
-      "instructions": "Masonja",
-      "category": "Masonja",
-      "prepTime": "Masonja",
-      "cookTime": "Masonja",
-      "servings": "Masonja",
-      "userId": null
+      "ingredients": "Tomatoes ,  Unions, Cooking oil",
+      "instructions": "Take your masonja and put them in water for 5 minutes , after start cleaning them. Fry your union and then put masonja in the pot alongside union and let them get fried , and put tomatoe  and now put some water, and let it boil for 10-15 minutes",
+      "category": "Dinner",
+      "prepTime": "10 minutes",
+      "cookTime": "30 minutes",
+      "servings": "Family",
+      "userId": "1723580249970"
     },
     {
-      "id": "6a49",
-      "recipeName": "Masonja",
-      "ingredients": "Masonja",
-      "instructions": "Masonja",
-      "category": "Masonja",
-      "prepTime": "Masonja",
-      "cookTime": "Masonja",
-      "servings": "Masonja",
-      "userId": null
+      "id": "9583",
+      "recipeName": "fish",
+      "ingredients": "oil",
+      "instructions": "wee",
+      "category": "Breakfast",
+      "prepTime": "5",
+      "cookTime": "5",
+      "servings": "5",
+      "userId": "1723580249970"
     },
     {
-      "id": "efc8",
-      "recipeName": "oscar",
-      "ingredients": "oscar",
-      "instructions": "oscar",
-      "category": "oscar",
-      "prepTime": "oscar",
-      "cookTime": "oscar",
-      "servings": "oscar",
-      "userId": null
-    },
-    {
-      "id": "2d7e",
-      "recipeName": "Masonja",
-      "ingredients": "Masonja",
-      "instructions": "Masonja",
-      "category": "Masonja",
-      "prepTime": "Masonja",
-      "cookTime": "Masonja",
-      "servings": "Masonja",
-      "userId": null
-    },
-    {
-      "id": "2d7e",
-      "recipeName": "Masonja",
-      "ingredients": "Masonja",
-      "instructions": "Masonja",
-      "category": "Masonja",
-      "prepTime": "Masonja",
-      "cookTime": "Masonja",
-      "servings": "Masonja",
-      "userId": null
-    },
-    {
-      "id": "323e",
-      "recipeName": "oscar",
-      "ingredients": "oscar",
-      "instructions": "oscar",
-      "category": "oscar",
-      "prepTime": "oscar",
-      "cookTime": "oscar",
-      "servings": "oscar",
-      "userId": null
+      "id": "aaac",
+      "recipeName": "w",
+      "ingredients": "w",
+      "instructions": "w",
+      "category": "w",
+      "prepTime": "w",
+      "cookTime": "w",
+      "servings": "w",
+      "userId": "1723580249970"
     }
   ]
 }

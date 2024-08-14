@@ -39,6 +39,8 @@
     overflow: auto;
     padding: 2em;
     text-align: center;
+    height: 50%;
+    overflow-y: auto;
 }
 
 /* .menu .recipe-card img 
@@ -117,10 +119,11 @@
 .my-recipe .title h3
 {
     /* font-family:'Papyrus', fantasy; */
-    padding: .5em 1em;
+    padding: .4em .6em;
     border: 3px solid transparent; 
     border-image: linear-gradient(to right, #d3d0d0, #141413);
     border-image-slice: 1;
     /* width: 20%; */
     /* text-align: center; */
+    font-size: .9em;
 }

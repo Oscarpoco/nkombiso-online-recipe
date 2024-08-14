@@ -180,6 +180,7 @@ import Login from './components/Login';
 import MyRecipe from './components/MyRecipe';
 import FloatingButton from './components/FloatingButton';
 import AddRecipeForm from './components/AddRecipeForm';
+import Loader from './components/Loader'; // Import the Loader component
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("chicken");
@@ -192,6 +193,7 @@ function App() {
   const [userId, setUserId] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   // Check sign-in status on app load
   useEffect(() => {
@@ -201,18 +203,23 @@ function App() {
       setIsSignedIn(true);
     }
 
-    // Fetch recipes on component mount
-    const fetchRecipes = async () => {
+    const fetchRecipes = async (userId) => {
       try {
-        const response = await fetch('http://localhost:3003/recipes');
+        const response = await fetch(`http://localhost:3003/recipes?userId=${userId}`);
         const data = await response.json();
         setRecipes(data);
       } catch (err) {
         console.error("Failed to fetch recipes", err);
+      } finally {
+        setLoading(false); // Stop loading after fetching data
       }
     };
 
-    fetchRecipes();
+    if (savedUserId) {
+      fetchRecipes(savedUserId);
+    } else {
+      setLoading(false); // Stop loading if no user is signed in
+    }
   }, []);
 
   // SEARCH FUNCTION
@@ -319,6 +326,25 @@ function App() {
     setShowRecipeForm(true);
   };
 
+  // BREAKFAST CATEGORY
+  const handleBreakFast = () => {
+    setSearchTerm("Breakfast");
+  };
+
+  // LUNCH CATEGORY
+  const handleLunch = () => {
+    setSearchTerm("Lunch");
+  };
+
+  // DINNER CATEGORY
+  const handleDinner = () => {
+    setSearchTerm("Dinner");
+  };
+
+  if (loading) {
+    return <Loader />; // Show the loader while data is being fetched
+  }
+
   return (
     <div className="App">
       {/* NAVBAR */}
@@ -329,6 +355,9 @@ function App() {
           onSignIn={isSignedIn}
           onProfileShow={handleOpenProfile}
           onSignOut={handleSignOut}
+          onBreakfast={handleBreakFast}
+          onLunch={handleLunch}
+          onDinner={handleDinner}
         />
       </header>
 
@@ -337,10 +366,11 @@ function App() {
         <Background onSearch={handleSearch} />
         <Body />
         {isSignedIn && (
-          <MyRecipe 
+          <MyRecipe
             recipes={recipes}
             deleteRecipe={deleteRecipe}
             editRecipe={editRecipe}
+            search={searchTerm}
           />
         )}
         <Recipe search={searchTerm} />
@@ -379,6 +409,7 @@ function App() {
         addRecipe={addRecipe}
         recipe={recipeToEdit} // Pass the recipe to edit
         editMode={editMode} // Indicate whether it's edit mode
+        setRecipes={setRecipes}
       />
     </div>
   );
