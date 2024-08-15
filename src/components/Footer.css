@@ -84,6 +84,7 @@
     justify-content: center;
     align-items: center;
     gap: .2em;
+    box-sizing: border-box;
 }
 
 .subscribe p
@@ -105,6 +106,7 @@
     border: 3px solid transparent; 
     border-image: linear-gradient(to right, #4680f3, #141413);
     border-image-slice: 1;
+    /* font-size: .7em; */
 }
 
 .subscribe button
@@ -185,8 +187,9 @@
 
     .subscribe
     {
-    width: 100%;
-    flex-direction: row;
+        width: 100%;
+        flex-direction: row;
+        padding: 0 1em;
     }
 
     .subscribe p
@@ -196,11 +199,17 @@
 
     .subscribe input
     {
-    padding: .5em 2em;
+    padding: .7em 2.5em;
     outline: none;
     border: 1px solid transparent; 
     border-image: linear-gradient(to right, #4680f3, #141413);
     border-image-slice: 1;
+    font-size: .7em;
+    }
+
+    .subscribe ::placeholder
+    {
+        align-self: start;
     }
 
     .subscribe button

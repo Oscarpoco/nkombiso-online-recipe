@@ -46,8 +46,6 @@
 
 import React, { useState } from "react";
 import './NavBar.css';
-import { FaSignInAlt } from "react-icons/fa";
-import { IoIosPersonAdd } from "react-icons/io";
 import { SiCodechef } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu } from "react-icons/fi"; // Hamburger icon
@@ -68,8 +66,8 @@ function NavBar({ onSignInClick, openMenu, closeMenu, isMenuOpen,onRegisterClick
 
                 {!onSignIn ? (
                     <div className="signIn">
-                        <button type="submit" onClick={onSignInClick} style={{ border: 'none', cursor: 'pointer', fontSize: '1.1em', fontWeight: 'bold', color: 'black', gap: '.3em' }}>SignIn <FaSignInAlt className="user-icon" /></button>
-                        <button type="submit" onClick={onRegisterClick}>Register <IoIosPersonAdd className="user-icon" /></button>
+                        <button type="submit" onClick={onSignInClick} style={{ color: 'black'}}>SignIn </button>
+                        <button type="submit" onClick={onRegisterClick}>Register</button>
                     </div>
                 ) : (
                     <div className="profile">

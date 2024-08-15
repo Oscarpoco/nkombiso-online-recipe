@@ -28,3 +28,12 @@
 }
   
 @keyframes l1 {to{transform: rotate(.5turn)}}
+
+@media only screen and (max-width: 740px) 
+{
+    .box .logo
+    {
+    font-size: 1em;
+    }
+
+}

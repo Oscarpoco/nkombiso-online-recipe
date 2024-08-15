@@ -95,4 +95,38 @@
     {
         align-self: center;
     }
+
+}
+
+@media only screen and (max-width:2560px)
+{
+    .left
+{
+    font-size: 2.6em;
+}
+}
+
+
+@media only screen and (max-width:1024px)
+{
+    .left
+{
+    font-size: .7em;
+}
+}
+
+@media only screen and (max-width:1440px)
+{
+    .left
+{
+    font-size: 1.2em;
+}
+}
+
+@media only screen and (max-width:768px)
+{
+    .left
+{
+    font-size: .7em;
+}
 }
