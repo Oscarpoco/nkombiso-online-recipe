@@ -130,3 +130,11 @@
     font-size: .7em;
 }
 }
+
+@media only screen and (max-width:1920px)
+{
+    .left
+{
+    font-size: 1.7em;
+}
+}
