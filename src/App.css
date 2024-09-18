@@ -16,6 +16,16 @@
   font-size: 1.2em;
 }
 
+button
+{
+  cursor: pointer;
+}
+
+button :hover
+{
+  color: red;
+}
+
 /* SCROLLBAR FOR ALL */
 
 /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */

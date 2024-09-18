@@ -1,3 +1,61 @@
+# **Online Recipe Application**
+
+## **Project Overview**
+This is an **Online Recipe Application** built with **React**, **CSS**, and an **API** to manage and display recipes. Users can browse, search, and explore a wide variety of recipes, each with detailed instructions and ingredients. The application fetches recipe data from an external API and provides a seamless user experience with a dynamic interface.
+
+In addition to the React frontend, the project includes a backend server that handles API calls and other necessary functions. You need to run the server to fully utilize the application.
+
+## **Features**
+- **Recipe Search**: Users can search for their favorite recipes using the API.
+- **Recipe Details**: Each recipe includes ingredients, instructions, and cooking times.
+- **Responsive Design**: The application is fully responsive, making it accessible on various devices.
+- **Asynchronous API Handling**: The app fetches recipes from an API in real time.
+  
+## **Prerequisites**
+- **Node.js** and **npm** installed on your machine.
+- An active internet connection to fetch recipe data from the API.
+
+## **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/online-recipe-app.git
+   ```
+
+2. Navigate to the project folder:
+   ```bash
+   cd online-recipe-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## **Running the Application**
+1. **Run the server**:
+   Start the backend server to handle API requests and other services.
+   ```bash
+   npm run server
+   ```
+
+2. **Run the React app**:
+   Start the development server to launch the React frontend.
+   ```bash
+   npm start
+   ```
+
+3. Open your browser and go to `http://localhost:3000` to start browsing recipes.
+
+## **Technology Stack**
+- **React** for building the frontend.
+- **CSS** for styling and responsiveness.
+- **API** for managing and fetching recipes.
+
+## **License**
+This project is licensed under the MIT License.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -17,6 +17,15 @@
       "name": "Oscar",
       "lastName": "Poco",
       "favorite": "Chicken"
+    },
+    {
+      "id": "d260",
+      "userId": 1726653554529,
+      "username": "okpoco1@gmail.com",
+      "password": "Oscar@2000",
+      "name": "oscar",
+      "lastName": "poco",
+      "favorite": "chicken"
     }
   ],
   "recipes": [
@@ -41,6 +50,17 @@
       "cookTime": "Banana",
       "servings": "Banana",
       "userId": "1723555729720"
+    },
+    {
+      "id": "e3de",
+      "recipeName": "erhgggg",
+      "ingredients": "hgrfergf",
+      "instructions": "gwfgw",
+      "category": "fegeg",
+      "prepTime": "rgewre",
+      "cookTime": "rgregwe",
+      "servings": "gerwre",
+      "userId": null
     }
   ]
 }
