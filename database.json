@@ -26,6 +26,18 @@
       "name": "oscar",
       "lastName": "poco",
       "favorite": "chicken"
+    },
+    {
+      "id": "5f58",
+      "fullName": "Oscar poco",
+      "email": "okpoco15@gmail.com",
+      "password": "Oscar@2000"
+    },
+    {
+      "id": "d9d1",
+      "fullName": "Oscarpoco",
+      "email": "okpoco@gmail.com",
+      "password": "Oscar@2000"
     }
   ],
   "recipes": [
